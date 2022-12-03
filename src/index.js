@@ -1,8 +1,13 @@
 import fs from 'fs'
-import { answers } from './answers.js'
 import { dayOne } from './day-one/index.js'
+import { dayTwo } from './day-two/index.js'
 
-console.assert(
-  dayOne(fs.readFileSync('src/inputs/day-one.txt').toString()) === answers[0],
-  'Day one solution incorrect',
-)
+const showAnswer = (day, fn) => {
+  console.log(
+    `Day ${day}:`,
+    fn(fs.readFileSync(`src/inputs/day-${day}.txt`).toString()),
+  )
+}
+
+showAnswer('one', dayOne)
+showAnswer('two', dayTwo)
