@@ -1,7 +1,9 @@
 // https://adventofcode.com/2022/day/1
 import fs from 'fs'
+import { answers } from '../answers.js'
 
-const text = fs.readFileSync('day-one/input.txt').toString()
+const text = fs.readFileSync('src/day-one/input.txt').toString()
+
 let currentElfIndex = 0
 const allElvesTotalCalories = text
   .split('\n')
@@ -15,4 +17,4 @@ const allElvesTotalCalories = text
     return [...otherElvesTotalCalories, currentElfHaul + parseInt(element)]
   }, [])
 
-console.assert(Math.max(...allElvesTotalCalories) === 70296)
+console.assert(Math.max(...allElvesTotalCalories) === answers[0])
