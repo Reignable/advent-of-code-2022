@@ -10,4 +10,5 @@ const showAnswer = (day, fn) => {
 }
 
 showAnswer('one', dayOne)
-showAnswer('two', dayTwo)
+showAnswer('two', dayTwo.partOne)
+showAnswer('two', dayTwo.partTwo)

@@ -1,45 +1,16 @@
 // https://adventofcode.com/2022/day/2
 
-const normalizeShape = shape => {
-  switch (shape) {
-    case 'X':
-      return 'A'
-    case 'Y':
-      return 'B'
-    case 'Z':
-      return 'C'
-    default:
-      return shape
-  }
-}
+import { partOneReducer } from './partOneReducer'
+import { partTwoReducer } from './partTwoReducer'
 
-const OUTCOME_MAP = {
-  [2]: 0,
-  [1]: 6,
-  [0]: 3,
-  [-1]: 0,
-  [-2]: 6,
-}
+const createRounds = inputString => inputString.split('\n')
 
-const SHAPE_SCORE_MAP = {
-  A: 1,
-  B: 2,
-  C: 3,
-}
+const partFn = partReducer => inputString =>
+  createRounds(inputString).reduce(partReducer, 0)
 
-const getOutcomeScore = (opponentShape, myShape) =>
-  OUTCOME_MAP[myShape.charCodeAt(0) - opponentShape.charCodeAt(0)]
-
-const getShapeScore = shape => SHAPE_SCORE_MAP[shape]
-
-const getScoreForRound = round => {
-  const [opponentShape, myShape] = round.split(' ').map(normalizeShape)
-  return getShapeScore(myShape) + getOutcomeScore(opponentShape, myShape)
-}
-
-const dayTwo = inputString => {
-  const rounds = inputString.split('\n')
-  return rounds.reduce((total, round) => total + getScoreForRound(round), 0)
+const dayTwo = {
+  partOne: partFn(partOneReducer),
+  partTwo: partFn(partTwoReducer),
 }
 
 export { dayTwo }
