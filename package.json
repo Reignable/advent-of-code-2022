@@ -5,11 +5,14 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "author": "Joe Barrett",
   "license": "MIT",
   "dependencies": {
     "npm": "^9.1.3"
+  },
+  "devDependencies": {
+    "vitest": "^0.25.3"
   }
 }
