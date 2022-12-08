@@ -1,4 +1,4 @@
-import { getScoreForRound } from './getScoreForRound'
+import { getScoreForRound } from './getScoreForRound.js'
 
 const normalizeShape = shape => {
   switch (shape) {

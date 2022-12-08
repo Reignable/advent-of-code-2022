@@ -1,4 +1,4 @@
-import { getScoreForRound } from './getScoreForRound'
+import { getScoreForRound } from './getScoreForRound.js'
 
 const SHAPE_FOR_OUTCOME_MAP = {
   X: {

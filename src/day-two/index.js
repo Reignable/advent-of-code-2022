@@ -1,7 +1,7 @@
 // https://adventofcode.com/2022/day/2
 
-import { partOneReducer } from './partOneReducer'
-import { partTwoReducer } from './partTwoReducer'
+import { partOneReducer } from './partOneReducer.js'
+import { partTwoReducer } from './partTwoReducer.js'
 
 const createRounds = inputString => inputString.split('\n')
 
